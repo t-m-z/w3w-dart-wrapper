@@ -75,7 +75,7 @@ abstract class What3WordsV3Service extends ChopperService {
   static What3WordsV3Service create(
       String? apiKey, String endpoint, Map<String, String>? headers) {
     final client = ChopperClient(
-        baseUrl: endpoint,
+        baseUrl: endpoint as Uri,
         interceptors: [
           HeaderInterceptor(apiKey, headers),
           HttpLoggingInterceptor()
